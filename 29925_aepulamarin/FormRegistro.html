@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>LOGISTICA</title>
+    <link rel="stylesheet" href="Recursos/MisEstilos.css">
+    
+    <script>
+      function gestionarFormulario() {
+        // --- Requerimiento 1: Habilitar botón  ---
+        var chkPropietario = document.getElementById('chkPropietario');
+        var btnRegistrar = document.getElementById('btnRegistrar');
+        
+        // El botón estará deshabilitado SI chkPropietario NO está marcado
+        btnRegistrar.disabled = !chkPropietario.checked;
+
+        // --- Requerimiento 2: Mostrar formulario confidencial  ---
+        var chkTercero = document.getElementById('chkTercero');
+        var formConfidencial = document.getElementById('formConfidencial');
+        
+        if (chkTercero.checked) {
+          formConfidencial.style.display = 'block'; // Mostrar
+        } else {
+          formConfidencial.style.display = 'none'; // Ocultar
+        }
+      }
+    </script>
+  </head>
+  
+  <body onload="gestionarFormulario()">
+    
+    <form action="./Script_PHP/registrar.php" method="POST" name="FormDireccion" target="_blank">
+       <fieldset>
+         <legend>DIRECCION DE ENVIO</legend>
+         Calle Principal <br>
+         <input type="text" name="txtPrincipal" value="">
+         <br>
+         Transversal<br>
+         <input type="text" name="txtTransversal" value="">
+        
+		<br>
+		<input type="checkbox" id="chkPropietario" name="chbEntrega1" value="PROPIETARIO" onclick="gestionarFormulario()"> Entrega al propietario.<br>
+        <input type="checkbox" id="chkTercero" name="chbEntrega2" value="TERCERO" onclick="gestionarFormulario()"> Entrega a un tercero.
+
+         <br><br>
+         Cantones: <select  name="cmbCantones">
+		      <optgroup label="PICHINCHA">
+					<option value="Q">Quito</option>
+					<option value="R">Rumiñahui</option>
+					<option value="M">Mejia</option>
+             </optgroup>
+			 <optgroup label="GUAYAS">
+					<option value="G">Guayaquil</option>
+					<option value="S">Santa Elena</option>
+					<option value="SL">Salinas</option>
+             </optgroup>
+         </select>
+		 
+         <br><br>
+           <input type="submit" id="btnRegistrar" name="SubmitDireccion" value="REGISTRAR" disabled>
+       </fieldset>
+    </form>
+	
+	<br>
+    
+    <form action="./Script_PHP/procesa.php" method="POST" name="FormConfidencial" id="formConfidencial" target="_blank" style="display:none;">
+       <fieldset>
+         <legend>INFORMACIÓN CONFIDENCIAL</legend>
+         Código Postal: 
+         <input type="password" name="pswCodigoPostal" value="">
+         
+		 <br>
+         Referencia de la Dirección:<br>
+         <textarea name="Mensaje" rows="3" cols="30" id="Mensaje"></textarea><br>
+         <br>
+           <input type="submit" name="SubmitConfidencial" value="PROCESAR">
+       </fieldset>
+    </form>
+    
+    <br><br>
+    <a href="index.html">Regresar</a>
+    <script src="js/validar.js"></script>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', actualizarFormulario);
+    </script>
+    
+  </body>
+  
+</html>

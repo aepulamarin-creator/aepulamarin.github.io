@@ -1,0 +1,111 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family:sans-serif;
+  box-sizing: border-box;
+}
+
+body{
+  background: #e9ecef; /* Cambiado a un gris claro */
+  display: flex;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+form{
+  margin: auto;
+  width: 90%;
+  max-width: 600px; /* Un poco más ancho para FormProducto */
+  background: #FFFFFF; /* Fondo blanco */
+  padding: 30px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Sombra suave */
+}
+
+/* Estilos para fieldset que añadí */
+fieldset {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+legend {
+  font-weight: bold;
+  color: #0056b3;
+  padding: 0 5px;
+}
+
+
+h2{
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333; /* Color de título oscuro */
+}
+
+input[type=text],
+input[type=password],
+input[type=date],
+input[type=number],
+input[type=file],
+textarea,
+select {
+  display: block;
+  padding: 10px;
+  width: 100%;
+  margin-top: 5px; /* Margen solo arriba */
+  margin-bottom: 15px; /* Margen abajo */
+  font-size: 16px; /* Tamaño de fuente estándar */
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* Estilos para botones */
+input[type=submit],
+input[type=reset],
+input[type=button] {
+  background: #007bff; /* Azul primario */
+  border:0;
+  color: white;
+  opacity: 1;
+  cursor: pointer;
+  border-radius: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  margin: 10px 5px 0 0;
+  transition: background-color 0.3s;
+}
+
+input[type=reset] {
+    background: #dc3545; /* Rojo para borrar */
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+  background: #0056b3; /* Azul oscuro en hover */
+}
+
+input[type=reset]:hover {
+  background: #c82333; /* Rojo oscuro en hover */
+}
+
+/* Estilo para botón deshabilitado (Parte 3) */
+input[type=button]:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+
+input[type=submit]:active,
+input[type=reset]:active,
+input[type=button]:active {
+  transform: scale(0.95);
+}
+
+/* RESPONSIVE */
+@media(max-width:780px){
+  form{
+    width: 95%;
+  }
+}

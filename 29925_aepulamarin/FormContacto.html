@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Formulario de Contacto</title>
+    <meta name="viewport" content="width=device-width, user-scaleble=no,
+    initial-scale=1, maximum-scale=1,minimum-scale=1">
+    <link rel="stylesheet" href="Recursos/MisEstilos.css">
+    
+    <script>
+      // --- PARTE 3.a: Función "validar()" --- 
+      function validar() {
+        
+        // Instrucción: "valor = document.getElementById('campo').value" [cite: 75]
+        var valorEmail = document.getElementById('txtEmail').value;
+        var valorTelefono = document.getElementById('txtTelefono').value;
+
+        // --- PARTE 3.a (Campo 1): Validación de Correo --- [cite: 72]
+        // (Usando la expresión regular exacta de la imagen que me enviaste)
+        var expresion = /^[a-z][\w.-]+@\w[\w.-]+\.[\w.-]*[a-z][a-z]$/i;
+        
+        if (!expresion.test(valorEmail)) {
+          alert('Error: El correo electrónico no es válido.');
+          return false; // Detiene el envío
+        }
+
+        // --- PARTE 3.a (Campo 2): Validación de Teléfono --- [cite: 72]
+        // Lógica: (valor.length == 10) AND (!isNaN(valor)) [cite: 72]
+        if (!(valorTelefono.length === 10 && !isNaN(valorTelefono))) {
+          alert('Error: El teléfono debe tener exactamente 10 dígitos numéricos.');
+          return false; // Detiene el envío
+        }
+
+        // Si ambas validaciones pasan
+        return true;
+      }
+
+      // --- PARTE 3.b: Función llamada por 'onclick' --- [cite: 76]
+      function validarYEnviar(boton) {
+        
+        // 1. Primero, se llama a la función validar() de la PARTE 3.a
+        if (validar()) {
+          
+          // Si la validación es correcta, se ejecuta la PARTE 3.b:
+          
+          // 2. Deshabilitar el botón [cite: 79]
+          boton.disabled = true;
+          
+          // 3. Cambiar el mensaje [cite: 80]
+          boton.value = "Enviando datos ..........";
+          
+          // 4. Enviar el formulario [cite: 80]
+          boton.form.submit();
+        }
+      }
+    </script>
+
+  </head>
+  <body>
+    
+    <form class="" action="" method="post" name="FormContacto">
+      <h2>Contacto</h2>
+      <p>Correo Electronico</p>
+      <input type="text" name="txtEmail" id="txtEmail" placeholder="&#9993; usuario@mail.com">
+      
+      <p>Fecha de Nacimiento</p>
+      <input type="date" name="txtFecha">
+      
+      <p>Teléfono</p>
+      <input type="text" name="txtTelefono" id="txtTelefono" placeholder="&#9742; Telefono">
+      
+      <input type="button" name="BtnEnviar" value="Enviar" onclick="validarYEnviar(this)">
+    </form>
+  </body>
+</html>

@@ -1,0 +1,158 @@
+body {
+  width:1300px;
+  margin: 0 auto;  /* Para que el contenedor este centrado */
+  text-align:center;
+  background-color: #f4f7f6; /* Añadido un fondo suave al body */
+}
+
+h2{
+  text-align: center;
+  margin-bottom: 50px;
+  color:#FFF;
+  font-family:Verdana, Geneva, sans-serif;
+  font-size: 30px;
+}
+
+.Texto{
+  text-align: center;
+  color:#333; /* Cambiado a un gris oscuro */
+  font-family:Arial;
+  font-size: 25px;
+}
+
+.Boton {
+    background-color: #007bff; /* Cambiado a un azul primario */
+    border-width: 2px;
+	 border-style: solid;
+	 border-color: #007bff;
+	 border-radius: 10px;
+    color: #FFFFFF; /* Texto blanco */
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.Boton:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+/* HEADER   */
+#header {   
+  position:absolute;
+  left:50px;
+  top:20px;
+  width: 1260px;
+  height:170px;
+  float: none;
+  background:inherit;
+  background-color: #004a99; /* Cambiado de Cyan a Azul Oscuro */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+ }
+
+/* navBar  */
+#navBar {
+  position:absolute;
+  left:50px;
+  top:200px;
+  width:1260px;
+  height:70px;
+  float: none;
+  background:inherit;
+  background-color: #FFFFFF; /* Cambiado de Amarillo a Blanco */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 10px;
+}
+
+
+/* leftMenu  */
+#leftMenu {
+  position:absolute;
+  left:50px;
+  top:280px;
+  width:200px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: #FFFFFF; /* Mantenido en Blanco */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 80px;
+ }
+
+ 
+ 
+/* content */
+#content {
+  position:absolute;
+  left:270px;
+  top:280px;
+  width:600px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: #e9ecef; /* Cambiado de Verde a Gris claro */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+}
+
+
+
+/* rigthMenu */
+#rightMenu {
+  position:absolute;
+  left:890px;
+  top:280px;
+  width:420px;
+  height:320px;
+  float: left;
+  background:inherit;
+  background-color: #343a40; /* Cambiado de Negro a Gris Oscuro */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-left: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+}
+
+
+/* footer  */
+#footer {
+  position:absolute;
+  left:50px;
+  top:620px;
+  width:1260px;
+  height:60px;
+  float: none;
+  background:inherit;
+  background-color: #FFFFFF; /* Cambiado de Amarillo a Blanco */
+  box-sizing:border-box;
+  border-width:5px;
+  border-style:solid;
+  border-color:rgba(121, 121, 121, 1);
+  border-radius:10px;
+  padding-top: 10px;
+}
